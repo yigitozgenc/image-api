@@ -63,5 +63,4 @@ logs/
 Thumbs.db
 
 # Project specific
-data/*.csv
 !data/.gitkeep
