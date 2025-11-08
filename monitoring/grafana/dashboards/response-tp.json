@@ -1,0 +1,35 @@
+{
+    "datasource": {"type": "prometheus", "uid": "Prometheus"},
+    "fieldConfig": {
+      "defaults": {
+        "color": {"mode": "thresholds"},
+        "mappings": [],
+        "thresholds": {
+          "mode": "absolute",
+          "steps": [
+            {"color": "green", "value": null},
+            {"color": "yellow", "value": 1000000},
+            {"color": "red", "value": 10000000}
+          ]
+        },
+        "unit": "Bps"
+      }
+    },
+    "gridPos": {"h": 4, "w": 4, "x": 0, "y": 57},
+    "id": 101,
+    "options": {
+      "colorMode": "value",
+      "graphMode": "area",
+      "justifyMode": "auto",
+      "orientation": "auto",
+      "reduceOptions": {"values": false, "calcs": ["lastNotNull"], "fields": ""},
+      "textMode": "auto"
+    },
+    "targets": [{
+      "datasource": {"type": "prometheus", "uid": "Prometheus"},
+      "expr": "rate(http_response_size_bytes_sum[5m])",
+      "refId": "A"
+    }],
+    "title": "📤 Response Throughput",
+    "type": "stat"
+  }
